@@ -19,7 +19,7 @@ class CreateOrderHistoriesTable extends Migration
             $table->dateTime('datetime')->nullable();
             $table->string('history_type')->nullable();
             $table->string('history_message')->nullable();
-            $table->json('history_data')->nullable();
+            $table->string('history_data')->nullable();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

@@ -25,7 +25,7 @@ class CreateAppSettingsTable extends Migration
             $table->string('instagram_url')->nullable();
             $table->string('support_number')->nullable();
             $table->string('support_email')->nullable();
-            $table->json('notification_settings')->nullable();
+            $table->string('notification_settings')->nullable();
             $table->timestamps();
         });
     }

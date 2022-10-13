@@ -22,7 +22,7 @@ class CreatePaymentsTable extends Migration
             $table->string('payment_type');
             $table->string('txn_id')->nullable();
             $table->string('payment_status')->nullable()->comment('pending, paid, failed');
-            $table->json('transaction_detail')->nullable();
+            $table->string('transaction_detail')->nullable();
 
             $table->foreign('client_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
