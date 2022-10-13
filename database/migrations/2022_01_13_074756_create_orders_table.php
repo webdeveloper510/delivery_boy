@@ -16,8 +16,8 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('client_id')->nullable();
-            $table->json('pickup_point')->nullable();
-            $table->json('delivery_point')->nullable();
+            $table->string('pickup_point')->nullable();
+            $table->string('delivery_point')->nullable();
             $table->unsignedBigInteger('country_id')->nullable();
             $table->unsignedBigInteger('city_id')->nullable();
             $table->string('parcel_type')->nullable();
@@ -35,7 +35,7 @@ class CreateOrdersTable extends Migration
             $table->double('fixed_charges')->nullable()->default('0');
             $table->double('weight_charge')->nullable()->default('0');
             $table->double('distance_charge')->nullable()->default('0');
-            $table->json('extra_charges')->nullable();
+            $table->string('extra_charges')->nullable();
             $table->double('total_amount')->nullable()->default('0');
             $table->tinyInteger('pickup_confirm_by_client')->nullable()->default('0')->comment('0-not confirm , 1 - confirm');
             $table->tinyInteger('pickup_confirm_by_delivery_man')->nullable()->default('0')->comment('0-not confirm , 1 - confirm');          
