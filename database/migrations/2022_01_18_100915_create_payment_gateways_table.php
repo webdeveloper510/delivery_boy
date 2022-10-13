@@ -19,8 +19,8 @@ class CreatePaymentGatewaysTable extends Migration
             $table->string('type')->nullable();
             $table->tinyInteger('status')->nullable()->default('1')->comment('0- InActive, 1- Active');
             $table->tinyInteger('is_test')->nullable()->default('1')->comment('0-  No, 1- Yes');
-            $table->json('test_value')->nullable();
-            $table->json('live_value')->nullable();
+            $table->string('test_value')->nullable();
+            $table->string('live_value')->nullable();
             $table->timestamps();
         });
     }
